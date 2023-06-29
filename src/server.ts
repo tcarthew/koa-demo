@@ -1,11 +1,9 @@
 import Koa, { Next } from 'koa';
-import Router from 'koa-router';
 import bodyParser from '@koa/bodyparser';
 import healthRoutes from './health/routes';
 import usersRoutes from './users/routes';
 
 const app = new Koa();
-const router = new Router();
 const PORT = 3000;
 
 app.use(async (ctx, next: Next) => {
@@ -19,7 +17,6 @@ app.use(bodyParser());
 app.use(healthRoutes);
 app.use(usersRoutes);
 
-app.use(router.routes());
 app.listen(PORT);
 
 console.log(`Koa server listening on ${PORT}`);
