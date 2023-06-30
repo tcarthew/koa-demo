@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon --watch src ./src/server.ts",
+    "start:prod": "node dist/server.js",
     "build": "tsc -p ."
   },
   "keywords": [],
