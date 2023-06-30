@@ -18,3 +18,8 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: echo "This job's status is ${{ job.status }}"
+      - name: Archive build
+        uses: actions/upload-artifact/v3
+        with:
+          name: koa-demo-app
+          path: dist
