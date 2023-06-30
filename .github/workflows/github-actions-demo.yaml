@@ -2,7 +2,7 @@ name: Koa Demo Build
 run-name: ${{ github.actor }} triggered build
 on: [push]
 jobs:
-  explore-github-actions:
+  build-koa-demo:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Job automatically triggered by ${{ github.event_name }} event"
