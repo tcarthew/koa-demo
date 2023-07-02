@@ -1,6 +1,9 @@
 name: Koa Demo Build
 run-name: ${{ github.actor }} triggered build
 on: [push]
+env:
+  CONTAINER_NAME: ${{ vars.CONTAINER_NAME }}
+  ECS_TASK_DEFINITION: ${{ vars.ECS_TASK_DEFINITION }}
 jobs:
   build-koa-demo:
     runs-on: ubuntu-latest
