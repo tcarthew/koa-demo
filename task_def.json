@@ -2,7 +2,7 @@
   "family": "koa-demo-api-task",
   "containerDefinitions": [
     {
-      "name": "koa-demo-api-container",
+      "name": "koa-demo",
       "image": "197805327640.dkr.ecr.us-east-1.amazonaws.com/koa-demo",
       "cpu": 0,
       "portMappings": [
@@ -23,9 +23,9 @@
         "logDriver": "awslogs",
         "options": {
           "awslogs-create-group": "true",
-          "awslogs-group": "awslogs-fundrock",
+          "awslogs-group": "awslogs-koa-demo",
           "awslogs-region": "us-east-1",
-          "awslogs-stream-prefix": "fundrock"
+          "awslogs-stream-prefix": "koa-demo"
         }
       },
       "ulimits": []
