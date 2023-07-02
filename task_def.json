@@ -1,0 +1,44 @@
+{
+  "family": "koa-demo-api-task",
+  "containerDefinitions": [
+    {
+      "name": "koa-demo-api-container",
+      "image": "197805327640.dkr.ecr.us-east-1.amazonaws.com/koa-demo",
+      "cpu": 0,
+      "portMappings": [
+        {
+          "name": "koa-demo-api-container-3000-tcp",
+          "containerPort": 3000,
+          "hostPort": 3000,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "essential": true,
+      "environment": [],
+      "environmentFiles": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "awslogs-fundrock",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "fundrock"
+        }
+      },
+      "ulimits": []
+    }
+  ],
+  "executionRoleArn": "arn:aws:iam::197805327640:role/ecsTaskExecutionRole",
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "cpu": "1024",
+  "memory": "512",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  }
+}

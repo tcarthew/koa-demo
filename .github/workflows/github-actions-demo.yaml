@@ -1,13 +1,13 @@
 name: Koa Demo Build
 run-name: ${{ github.actor }} triggered build
 on: [push]
-env:
-  ECS_TASK_DEFINITION: ECS_TASK_DEFINITION
-  CONTAINER_NAME: CONTAINER_NAME
 jobs:
   build-koa-demo:
     runs-on: ubuntu-latest
     steps:
+      - name: DEBUG
+        run: ${{ toJson(env) }}
+        
       - name: Checkout Repo
         uses: actions/checkout@v3
 
