@@ -5,11 +5,13 @@ const router = new Router({ prefix, methods: ['GET', 'POST'] });
 const users = [
   {
     id: 1,
-    name: 'User One'
+    name: 'User One',
+    lastUpdate: new Date().toISOString()
   },
   {
     id: 2,
-    name: 'User Two'
+    name: 'User Two',
+    lastUpdate: new Date().toISOString()
   }
 ];
 
