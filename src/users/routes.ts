@@ -6,12 +6,12 @@ const users = [
   {
     id: 1,
     name: 'User One',
-    lastUpdate: new Date().toISOString()
+    auditDate: new Date().toISOString()
   },
   {
     id: 2,
     name: 'User Two',
-    lastUpdate: new Date().toISOString()
+    auditDate: new Date().toISOString()
   }
 ];
 
