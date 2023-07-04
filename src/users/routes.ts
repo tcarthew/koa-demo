@@ -12,6 +12,11 @@ const users = [
     id: 2,
     name: 'User Two',
     auditDate: new Date().toISOString()
+  },
+  {
+    id: 3,
+    name: 'User Three',
+    auditDate: new Date().toISOString()
   }
 ];
 
