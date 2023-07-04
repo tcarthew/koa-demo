@@ -34,7 +34,7 @@ router.get('/:id', async (ctx, next) => {
 });
 
 router.get('/', async (ctx) => {
-  ctx.body = { users };
+  ctx.body = users;
 });
 
 router.post('/', async (ctx) => {
