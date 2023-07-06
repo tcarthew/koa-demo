@@ -19,7 +19,7 @@ jobs:
           aws-access-key-id: ${{ secrets.ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.SECRET_KEY }}
           aws-region: us-east-1
-          role-to-assume: arn:aws:iam::197805327640:role/gh-actions-role
+          role-to-assume: arn:aws:iam::${{ secrets.ACCOUNT_ID }}:role/gh-actions-role
           role-session-name: GHActionsSession
           role-duration-seconds: 1800
       
