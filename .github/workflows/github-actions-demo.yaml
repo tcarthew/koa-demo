@@ -1,6 +1,8 @@
 name: Koa Demo Build
 run-name: ${{ github.actor }} triggered build
-on: [push]
+on:
+  workflow_dispatch:
+
 env:
   CONTAINER_NAME: ${{ vars.CONTAINER_NAME }}
   ECS_TASK_DEFINITION: ${{ vars.ECS_TASK_DEFINITION }}
