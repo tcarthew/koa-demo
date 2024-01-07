@@ -14,9 +14,9 @@ jobs:
         run: |
           echo "Current branch: ${{ github.ref }}"
           if [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            echo "::set-output name=env_name::production"
+            echo "env_name==production" >> $GITHUB_STATE
           else
-            echo "::set-output name=env_name::staging"
+            echo "env_name==staging" >> $GITHUB_STATE
           fi
     outputs:
       env_name: ${{ steps.env_check.outputs.env_name }}
