@@ -26,3 +26,11 @@ jobs:
       - name: Print environment
         run: |
           echo "Environment: ${{ needs.select-environment.outputs.env_name }}"
+
+  print-hello-world:
+    runs-on: ubuntu-latest
+    environment: ${{ needs.select-environment.outputs.env_name }}
+    steps:
+      - name: Print hello world
+        run: |
+          echo "Result: ${{ vars.HELLO_WORLD }}"
