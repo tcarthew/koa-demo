@@ -14,16 +14,14 @@ jobs:
         run: |
           echo "Current branch: ${{ github.ref }}"
           if [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            echo "env_name==production" >> $GITHUB_STATE
+            echo "env_name==production" >> $GITHUB_OUTPUT
           else
-            echo "env_name==staging" >> $GITHUB_STATE
+            echo "env_name==staging" >> $GITHUB_OUTPUT
           fi
-    outputs:
-      env_name: ${{ steps.env_check.outputs.env_name }}
 
   print-environment:
     runs-on: ubuntu-latest
     steps:
       - name: Print environment
         run: |
-          echo "Env: ${{ needs.select-environment.outputs.env_name }}"
+          echo "Env: ${{ steps.select-environment.outputs.env_name }}"
