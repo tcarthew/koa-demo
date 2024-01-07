@@ -9,5 +9,7 @@ jobs:
   test-pipeline:
     runs-on: ubuntu-latest
     steps:
-      - name: Which Environment
-        run: $CURRENT_ENV = "Staging"
+      - name: Check for production
+        run: |
+          echo "gh head ref $GITHUB_HEAD_REF"
+          echo "gh ref $GITHUB_REF"
