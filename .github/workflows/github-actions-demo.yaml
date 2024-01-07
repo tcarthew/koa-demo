@@ -1,7 +1,7 @@
 name: Koa Demo Build
 run-name: ${{ github.actor }} triggered build
 on:
-  workflow_dispatch:
+  - workflow_dispatch
 
 env:
   CONTAINER_NAME: ${{ vars.CONTAINER_NAME }}
