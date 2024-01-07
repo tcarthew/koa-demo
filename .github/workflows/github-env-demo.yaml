@@ -6,10 +6,24 @@ on:
   - workflow_dispatch
 
 jobs:
-  test-pipeline:
+  select-environment:
     runs-on: ubuntu-latest
     steps:
-      - name: Check for production
+      - name: Environment Check
+        id: env_check
         run: |
-          echo "gh head ref $GITHUB_HEAD_REF"
-          echo "gh ref $GITHUB_REF"
+          echo "Current branch: ${{ github.ref }}"
+          if [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            echo "::set-output name=env_name::production"
+          else
+            echo "::set-output name=env_name::staging"
+          fi
+    outputs:
+      env_name: ${{ steps.env_check.outputs.env_name }}
+
+  print-environment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print environment
+        run: |
+          echo "Env: ${{ needs.select-environment.outputs.env_name }}"
