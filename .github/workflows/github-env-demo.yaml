@@ -1,11 +1,13 @@
 name: Environment build demo
+env:
+  CURRENT_ENV: staging
 run-name: ${{ github.actor }} build
-on: [push]
+on:
+  - workflow_dispatch
 
 jobs:
   test-pipeline:
     runs-on: ubuntu-latest
-    environment: staging
     steps:
       - name: Which Environment
-        run: echo ${{ vars.HELLO_WORLD }}
+        run: $CURRENT_ENV = "Staging"
