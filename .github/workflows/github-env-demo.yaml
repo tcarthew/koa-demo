@@ -1,6 +1,4 @@
 name: Environment build demo
-env:
-  CURRENT_ENV: staging
 run-name: ${{ github.actor }} build
 on:
   - workflow_dispatch
@@ -9,7 +7,7 @@ jobs:
   select-environment:
     runs-on: ubuntu-latest
     outputs:
-      env_name: ${{ steps.env_check.env_name }}
+      env_name: ${{ steps.env_check.outputs.env_name }}
     steps:
       - name: Environment Check
         id: env_check
@@ -27,4 +25,4 @@ jobs:
     steps:
       - name: Print environment
         run: |
-          echo "Env: ${{ needs.select-environment.outputs.env_name }}"
+          echo "Environment: ${{ needs.select-environment.outputs.env_name }}"
