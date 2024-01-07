@@ -1,0 +1,11 @@
+name: Environment build demo
+run-name: ${{ github.actor }} build
+on: [push]
+
+jobs:
+  test-pipeline:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Which Environment
+        run: echo ${{ vars.HELLO_WORLD }}
