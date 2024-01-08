@@ -3,11 +3,13 @@ run-name: ${{ github.actor }} build
 
 on:
   push:
-    branches-ignore:
-      - main
+    branches:
+      - '*'
   workflow_dispatch:
     branches:
       - '*'
+    except:
+      - main
 
 jobs:
   select-environment:
