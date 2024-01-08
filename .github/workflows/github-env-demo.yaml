@@ -2,8 +2,8 @@ name: Environment build demo
 run-name: ${{ github.actor }} build
 on:
   workflow_dispatch:
-    branches:
-      - '!main'
+    branches-ignore:
+      - 'main'
 
 jobs:
   select-environment:
