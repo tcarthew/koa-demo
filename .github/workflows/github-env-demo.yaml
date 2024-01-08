@@ -5,6 +5,16 @@ on:
   workflow_dispatch:
 
 jobs:
+  set-running-env:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [ dev, staging, production ]
+
+    steps:
+      - name: Check running env
+        run: echo "Setting up ${{ matrix.environment }}"
+
   select-environment:
     runs-on: ubuntu-latest
     outputs:
@@ -18,7 +28,7 @@ jobs:
             echo "env_name=production" >> $GITHUB_OUTPUT
           else
             echo "env_name=staging" >> $GITHUB_OUTPUT
-          fi
+          fi  
 
   print-environment:
     runs-on: ubuntu-latest
