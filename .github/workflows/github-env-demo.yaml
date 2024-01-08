@@ -3,9 +3,6 @@ run-name: ${{ github.actor }} build
 
 on:
   workflow_dispatch:
-    branches:
-      except:
-        - main
 
 jobs:
   select-environment:
